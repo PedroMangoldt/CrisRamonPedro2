@@ -14,16 +14,14 @@ export default class Login extends Component {
     };
   }
 
-  onSubmit() {
-    const email = this.state.email;
-    const password = this.state.password;
+  onSubmit(email, pass) {
 
     if (email === '') {
       this.setState({ error: 'Ingresá tu email.' });
       return;
     }
 
-    if (password === '') {
+    if (pass === '') {
       this.setState({ error: 'Ingresá tu contraseña.' });
       return;
     }
@@ -31,10 +29,10 @@ export default class Login extends Component {
     this.setState({ loading: true, error: '' });
 
     auth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email, pass)
       .then((response) => {
         this.setState({ loading: false });
-        this.props.navigation.navigate('Home');
+        this.props.navigation.navigate('HomeMenu');
       })
       .catch((error) => {
         this.setState({ loading: false, error: 'No existe el usuario' });
@@ -67,7 +65,7 @@ export default class Login extends Component {
           <Text style={styles.error}>{this.state.error}</Text>
         ) : null}
 
-        <Pressable style={styles.button} onPress={() => this.onSubmit()}>
+        <Pressable style={styles.button} onPress={() => this.onSubmit(this.state.email, this.state.password)}>
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
 
