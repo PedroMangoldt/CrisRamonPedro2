@@ -8,8 +8,9 @@ class NavegationMenu extends Component {
     redner(){
         return(
             <Tab.Navigator>
-                <Tab.Screen name="Login"/>
-                <Tab.Screen name="Register"/>
+                <Tab.Screen name="HomePage" component={ HomePage }/>
+                <Tab.Screen name="Comments"component={ Comments }/>
+                <Tab.Screen name="Profile"component={ Profile }/>
             </Tab.Navigator>
         )
     }
