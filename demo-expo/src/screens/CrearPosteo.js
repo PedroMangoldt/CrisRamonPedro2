@@ -28,8 +28,8 @@ export default class CrearPosteo extends Component {
       return (
         <View>
           <Text style={styles.title}>Crear Nuevo Post</Text>
-          <TextInput keyboardType='default' placeholder='Escribe tu post' onChangeText={text => this.setState({description: text})} value={this.state.description}/>
-            <Pressable onPress={() => this.agregarPost(this.state.description)}>
+          <TextInput style={styles.input} keyboardType='default' placeholder='Escribe tu post' onChangeText={text => this.setState({description: text})} value={this.state.description}/>
+            <Pressable style={styles.button} onPress={() => this.agregarPost(this.state.description)}>
               <Text>Publicar Post</Text>
             </Pressable>
         </View>
@@ -39,7 +39,24 @@ export default class CrearPosteo extends Component {
 
   const styles = StyleSheet.create({
     title: {
-        fontSize: 24,
-        fontWeight: 'bold',
+      fontSize: 22,
+      fontWeight: 'bold',
+      marginBottom: 20,
+      textAlign: 'center',
     },
+    input: {
+      backgroundColor: 'white',
+      borderWidth: 1,
+      borderColor: '#DDD',
+      borderRadius: 8,
+      padding: 12,
+      marginBottom: 15,
+    },
+    button: {
+      backgroundColor: '#60A5FA',
+      paddingVertical: 12,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginTop: 10,
+    }
 })
