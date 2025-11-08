@@ -1,4 +1,3 @@
-// /screens/Login.js
 import React, { Component } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 import { auth } from '../firebase/config';
@@ -10,6 +9,7 @@ export default class Login extends Component {
       email: '',
       password: '',
       error: '',
+      loggedIn: false,
       loading: false
     };
   }
@@ -31,7 +31,7 @@ export default class Login extends Component {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then((response) => {
-        this.setState({ loading: false });
+        this.setState({ loggedIn: true, loading: false });
         this.props.navigation.navigate('HomeMenu');
       })
       .catch((error) => {
@@ -69,7 +69,7 @@ export default class Login extends Component {
           <Text style={styles.buttonText}>Login</Text>
         </Pressable>
 
-        <Pressable onPress={() => this.props.navigation.navigate('Register')}>
+        <Pressable style={styles.button} onPress={() => this.props.navigation.navigate('Register')}>
           <Text style={styles.link}>Ir al registro</Text>
         </Pressable>
       </View>
@@ -78,23 +78,34 @@ export default class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 16
+  container: { 
+    padding: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 200,
    },
-  title: { fontSize: 20,
+  title: { 
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 12 
 },
   field: {
+    backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    padding: 10,
-    marginVertical: 8,
-    borderRadius: 6
+    borderColor: '#DCDCDC',
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    fontSize: 15,
+    width: '100%',
   },
   button: {
+    backgroundColor: '#9EC9FF',
     paddingVertical: 12,
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 6,
-    marginTop: 8
+    marginTop: 8,
+    width: '100%',
   },
 });

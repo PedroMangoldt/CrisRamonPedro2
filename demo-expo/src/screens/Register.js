@@ -33,7 +33,7 @@ class Register extends Component {
     }
     render(){
         return(
-        <View>
+        <View style={styles.container}>
             <Text style = {styles.title}>Formulario de Registro</Text>
             <TextInput style={styles.field} keyboardType='email-address' placeholder='Email' onChangeText={ text => this.setState({email:text}) } value={this.state.email} />
                 <TextInput style={styles.field} keyboardType='default' placeholder='User Name' onChangeText={ text => this.setState({userName:text}) } value={this.state.userName}/> 
@@ -41,18 +41,44 @@ class Register extends Component {
                 <Pressable style={styles.button} onPress={() => this.onSubmit(this.state.email , this.state.password, this.state.userName)}>
                     <Text>  Registrarse </Text> 
                 </Pressable> 
-                <Pressable style = {styles.clickeable} onPress={ ()=> this.props.navigation.navigate('Login')}>
-                    <Text style = {styles.textoClickeable}>Ir a login</Text>
+                <Pressable style={styles.button} onPress={ ()=> this.props.navigation.navigate('Login')}>
+                    <Text style={styles.textoClickeable}>Ir a login</Text>
                 </Pressable>
         </View>
     )}
 }
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 24,
+    container: { 
+        padding: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 200,
+       },
+      title: { 
+        fontSize: 20,
         fontWeight: 'bold',
+        marginBottom: 12 
     },
+      field: {
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#DCDCDC',
+        borderRadius: 10,
+        paddingHorizontal: 12,
+        paddingVertical: 12,
+        fontSize: 15,
+        width: '100%',
+      },
+      button: {
+        backgroundColor: '#9EC9FF',
+        paddingVertical: 12,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderRadius: 6,
+        marginTop: 8,
+        width: '100%',
+      },
 })
 
 export default Register;

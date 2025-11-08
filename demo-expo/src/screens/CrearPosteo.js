@@ -53,10 +53,12 @@ export default class CrearPosteo extends Component {
       marginBottom: 15,
     },
     button: {
-      backgroundColor: '#60A5FA',
+      backgroundColor: '#9EC9FF',
       paddingVertical: 12,
-      borderRadius: 8,
       alignItems: 'center',
-      marginTop: 10,
-    }
+      borderWidth: 1,
+      borderRadius: 6,
+      marginTop: 8,
+      width: '100%',
+    },
 })
