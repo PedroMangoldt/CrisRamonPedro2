@@ -40,7 +40,7 @@ import Posteos from '../components/Posteos';
         <Text>Cargando...</Text> :
         <View>
         <Text style={styles.sectionTitle}>Home</Text>
-        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>
+        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/> }></FlatList>
         </View>}
       </View>
     );
