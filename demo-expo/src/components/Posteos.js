@@ -3,10 +3,16 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { db, auth } from '../firebase/config';
 import firebase from 'firebase';
 
+import Entypo from '@expo/vector-icons/Entypo';
+import Feather from '@expo/vector-icons/Feather';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 class Posteos extends Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+            likeado: false
+        };
     }
 
     likear(){
@@ -17,7 +23,8 @@ class Posteos extends Component {
             db.collection('posts')
               .doc(posteo.id)
               .update({
-                likes: firebase.firestore.FieldValue.arrayRemove(email)
+                likes: firebase.firestore.FieldValue.arrayRemove(email), 
+                likeado: true
               })
         } else {
             db.collection('posts')
@@ -33,10 +40,10 @@ class Posteos extends Component {
             <View style={styles.card}>
                 <Text style={styles.owner}>{this.props.posteo.data.owner}</Text>
                 <Text>{this.props.posteo.data.description}</Text>
-                <Text>Cantidad de likes: {this.props.posteo.data.likes.length}</Text>
+                <Text> {this.props.posteo.data.likes.length} Like</Text>
                 
                 <Pressable onPress={() => this.likear()}>
-                    <Text style={styles.mg}>Me gusta</Text>
+                    <Text style={styles.mg}><Feather name="heart" size={18} color="black" /></Text>
                 </Pressable>
                 <Pressable onPress={() => this.props.navigation.navigate('Comments', { id: this.props.posteo.id })}>
                     <Text style={styles.commentBtn}>Comentarios</Text>
@@ -49,12 +56,14 @@ class Posteos extends Component {
 
 const styles = StyleSheet.create({
     card:{
-        backgroundColor:'#fff',
-        padding:15,
-        borderRadius:8,
-        borderWidth:1,
-        borderColor:'#ddd',
-        marginBottom:15
+       backgroundColor:'#fff',
+       padding:15,
+       borderRadius:8,
+       borderWidth:1,
+       borderColor:'#ddd',
+       marginVertical: 7,
+       marginHorizontal: 15,
+        
     },
     owner:{
         fontWeight:'bold',

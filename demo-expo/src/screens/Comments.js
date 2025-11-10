@@ -1,9 +1,7 @@
-// src/screens/Comments.js
-
 import React, { Component } from 'react';
 import { View, Text, TextInput, Pressable, FlatList, StyleSheet } from 'react-native';
 import { db, auth } from '../firebase/config';
-import firebase from 'firebase'; // para arrayUnion
+import firebase from 'firebase'; 
 
 class Comments extends Component {
     constructor(props){

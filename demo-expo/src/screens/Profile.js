@@ -97,10 +97,11 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
   sectionTitle: {
-    fontSize: 22,
-    fontWeight: '700',
-    marginBottom: 12,
-    color: '#111',
+   fontSize: 22,
+   fontWeight: '700',
+   marginBottom: 12,
+   color: '#111',
+   paddingTop: 20,
   },
   button: {
     backgroundColor: '#9EC9FF',
