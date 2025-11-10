@@ -38,7 +38,7 @@ import Posteos from '../components/Posteos';
       <View style={styles.flatlist}>
         {this.state.loading ?
         <Text>Cargando...</Text> :
-        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item}/>}></FlatList>}
+        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>}
       </View>
     );
   }

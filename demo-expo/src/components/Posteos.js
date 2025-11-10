@@ -38,6 +38,10 @@ class Posteos extends Component {
                 <Pressable onPress={() => this.likear()}>
                     <Text style={styles.mg}>Me gusta</Text>
                 </Pressable>
+                <Pressable onPress={() => this.props.navigation.navigate('Comments', { id: this.props.posteo.id })}>
+                    <Text style={styles.commentBtn}>Comentarios</Text>
+                </Pressable>
+
             </View>
         )
     }
