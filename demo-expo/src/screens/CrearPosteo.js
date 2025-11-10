@@ -27,7 +27,7 @@ export default class CrearPosteo extends Component {
 
     render() {
       return (
-        <View>
+        <View style={styles.container}>
           <Text style={styles.title}>Crear Nuevo Post</Text>
           <TextInput style={styles.input} keyboardType='default' placeholder='Escribe tu post' onChangeText={text => this.setState({description: text})} value={this.state.description}/>
             <Pressable style={styles.button} onPress={() => this.agregarPost(this.state.description)}>
@@ -39,6 +39,12 @@ export default class CrearPosteo extends Component {
   }
 
   const styles = StyleSheet.create({
+    container: { 
+    padding: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 200,
+    },
     title: {
       fontSize: 22,
       fontWeight: 'bold',
@@ -52,6 +58,7 @@ export default class CrearPosteo extends Component {
       borderRadius: 8,
       padding: 12,
       marginBottom: 15,
+      width: '100%',
     },
     button: {
       backgroundColor: '#9EC9FF',
