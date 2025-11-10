@@ -58,8 +58,8 @@ class Posteos extends Component {
                 
                 <Pressable onPress={() => this.likear()}>
                     <Text style={styles.mg}></Text> {this.state.likeado ?
-                            <Feather name="heart" size={18} color="black" /> :
-                    <Text style={styles.mg}><FontAwesome name="heart" size={18} color="black" /></Text>}
+                            <FontAwesome name="heart" size={18} color="black" /> :
+                    <Text style={styles.mg}><Feather name="heart" size={18} color="black" /></Text>}
                 </Pressable>
                 <Pressable onPress={() => this.props.navigation.navigate('HomePage', {screen:'Comments', params:{ id: this.props.posteo.id }})}>
                     <Text style={styles.commentBtn}>Comentarios</Text>
@@ -68,7 +68,7 @@ class Posteos extends Component {
             </View>
         )
     }
-}
+}<Feather name="heart" size={18} color="black" />
 
 const styles = StyleSheet.create({
     card:{
