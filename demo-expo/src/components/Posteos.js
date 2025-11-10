@@ -55,20 +55,21 @@ class Posteos extends Component {
                 <Text style={styles.owner}>{this.props.posteo.data.owner}</Text>
                 <Text>{this.props.posteo.data.description}</Text>
                 <Text> {this.props.posteo.data.likes.length} Like</Text>
-                
-                <Pressable onPress={() => this.likear()}>
+                <View>
+                  <Pressable onPress={() => this.likear()}>
                     <Text style={styles.mg}></Text> {this.state.likeado ?
                             <FontAwesome name="heart" size={18} color="black" /> :
                     <Text style={styles.mg}><Feather name="heart" size={18} color="black" /></Text>}
-                </Pressable>
-                <Pressable onPress={() => this.props.navigation.navigate('HomePage', {screen:'Comments', params:{ id: this.props.posteo.id }})}>
+                  </Pressable>
+                   <Pressable onPress={() => this.props.navigation.navigate('Comments', { id: this.props.posteo.id })}>
                     <Text style={styles.commentBtn}>Comentarios</Text>
-                </Pressable>
+                  </Pressable>
+                </View>
 
             </View>
         )
     }
-}<Feather name="heart" size={18} color="black" />
+}
 
 const styles = StyleSheet.create({
     card:{
