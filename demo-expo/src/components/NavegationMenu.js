@@ -10,18 +10,12 @@ import Home from '../screens/Home';
 import CrearPosteo from '../screens/CrearPosteo';
 import Profile from '../screens/Profile';
 import Comments from '../screens/Comments';
+import HomeStack from './MenuStack';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-function HomeStack(){
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={Home} /> 
-            <Stack.Screen name="Comments" component={Comments} /> 
-        </Stack.Navigator>
-    );
-}
+
 
 class NavegationMenu extends Component {
     constructor(props){ 
@@ -32,7 +26,7 @@ class NavegationMenu extends Component {
     render(){
         return(
             <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
-                <Tab.Screen name="HomePage" component={HomeStack} options={{ tabBarIcon: () => <Entypo name="home" size={24} color="black" />, headerShown: false}}/>
+                <Tab.Screen name="HomePage" component={ HomeStack } options={{ tabBarIcon: () => <Entypo name="home" size={24} color="black" />, headerShown: false}}/>
 
                 <Tab.Screen 
                     name="NewPost" 

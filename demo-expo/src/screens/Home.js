@@ -36,12 +36,10 @@ import Posteos from '../components/Posteos';
   render() {
     return (
       <View style={styles.flatlist}>
+        <Text style={styles.sectionTitle}>Home</Text>
         {this.state.loading ?
         <Text>Cargando...</Text> :
-        <View>
-        <Text style={styles.sectionTitle}>Home</Text>
-        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>
-        </View>}
+        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>}
       </View>
     );
   }

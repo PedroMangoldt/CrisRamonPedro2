@@ -49,6 +49,8 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.props);
+    
     return (
       <View style={styles.container}>
 
@@ -63,8 +65,7 @@ class Profile extends Component {
           <FlatList
             data={this.state.posteosUsuario}
             keyExtractor={item => item.id}
-            renderItem={({ item }) => <Posteos posteo={item} />}
-          />
+            renderItem={({ item }) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>
         )}
 
         <Pressable style={styles.button} onPress={() => this.logout()}>
