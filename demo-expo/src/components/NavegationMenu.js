@@ -32,13 +32,13 @@ class NavegationMenu extends Component {
     render(){
         return(
             <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
-                <Tab.Screen name="HomePage" component={HomeStack} options={{ tabBarIcon: () => <Entypo name="home" size={24} color="black" />}}/>
+                <Tab.Screen name="HomePage" component={HomeStack} options={{ tabBarIcon: () => <Entypo name="home" size={24} color="black" />, headerShown: false}}/>
 
                 <Tab.Screen 
                     name="NewPost" 
                     component={CrearPosteo}
                     options={{
-                        tabBarIcon: () => <FontAwesome5 name="plus-circle" size={24} color="black" />
+                        tabBarIcon: () => <FontAwesome5 name="plus-circle" size={24} color="black" />, headerShown: false
                     }}
                 />
 
@@ -46,7 +46,7 @@ class NavegationMenu extends Component {
                     name="Profile"
                     component={Profile}
                     options={{
-                        tabBarIcon: () => <MaterialCommunityIcons name="account" size={24} color="black" />
+                        tabBarIcon: () => <MaterialCommunityIcons name="account" size={24} color="black" />, headerShown: false
                     }}
                 />
             </Tab.Navigator>

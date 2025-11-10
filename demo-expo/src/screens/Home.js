@@ -38,7 +38,10 @@ import Posteos from '../components/Posteos';
       <View style={styles.flatlist}>
         {this.state.loading ?
         <Text>Cargando...</Text> :
-        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>}
+        <View>
+        <Text style={styles.sectionTitle}>Home</Text>
+        <FlatList data={this.state.posteos} keyExtractor={ item => item.id} renderItem={({item}) => <Posteos posteo={item} navigation={this.props.navigation}/>}></FlatList>
+        </View>}
       </View>
     );
   }
@@ -48,6 +51,15 @@ const styles = StyleSheet.create({
   flatlist: {
      width: '100%',
      flex: 1
+  },
+
+  sectionTitle: {
+   fontSize: 22,
+   fontWeight: '700',
+   marginBottom: 12,
+   color: '#111',
+   paddingTop: 20,
+   textAlign: "center"
   },
 })
 

@@ -55,7 +55,7 @@ class Profile extends Component {
         <Text style={styles.name}>{this.state.username}</Text>
         <Text>{auth.currentUser.email}</Text>
 
-        <Text style={styles.sectionTitle}>Mis posteos:</Text>
+        <Text style={styles.sectionTitle}>Ultimos posteos</Text>
 
         {this.state.loading ? (
           <Text>Cargando...</Text>
