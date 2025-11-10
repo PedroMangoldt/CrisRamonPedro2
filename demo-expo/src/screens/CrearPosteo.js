@@ -15,7 +15,8 @@ export default class CrearPosteo extends Component {
       db.collection('posts').add({
         owner: auth.currentUser.email ,
         description: this.state.description,
-        createdAt: Date.now()
+        createdAt: Date.now(),
+        likes: []
       })
       .then(res => {
         this.setState({description: ''})
