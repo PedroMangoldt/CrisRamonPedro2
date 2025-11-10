@@ -24,14 +24,28 @@ class Posteos extends Component {
               .doc(posteo.id)
               .update({
                 likes: firebase.firestore.FieldValue.arrayRemove(email), 
-                likeado: true
               })
+                .then(
+                ()=>{
+                    this.setState({
+                        likeado: false
+                    })
+                }
+            )
+            
         } else {
             db.collection('posts')
               .doc(posteo.id)
               .update({
                 likes: firebase.firestore.FieldValue.arrayUnion(email)
               })
+                .then(
+                ()=>{
+                    this.setState({
+                        likeado: true
+                    })
+                }
+            )
         }
     }
 
@@ -43,9 +57,11 @@ class Posteos extends Component {
                 <Text> {this.props.posteo.data.likes.length} Like</Text>
                 
                 <Pressable onPress={() => this.likear()}>
-                    <Text style={styles.mg}><Feather name="heart" size={18} color="black" /></Text>
+                    <Text style={styles.mg}></Text> {this.state.likeado ?
+                            <Feather name="heart" size={18} color="black" /> :
+                    <Text style={styles.mg}><FontAwesome name="heart" size={18} color="black" /></Text>}
                 </Pressable>
-                <Pressable onPress={() => this.props.navigation.navigate('Comments', { id: this.props.posteo.id })}>
+                <Pressable onPress={() => this.props.navigation.navigate('HomePage', {screen:'Comments', params:{ id: this.props.posteo.id }})}>
                     <Text style={styles.commentBtn}>Comentarios</Text>
                 </Pressable>
 
