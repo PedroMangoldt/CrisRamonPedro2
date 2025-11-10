@@ -48,7 +48,8 @@ import Posteos from '../components/Posteos';
 const styles = StyleSheet.create({
   flatlist: {
      width: '100%',
-     flex: 1
+     flex: 1,
+     backgroundColor: '#9EC9FF'
   },
 
   sectionTitle: {

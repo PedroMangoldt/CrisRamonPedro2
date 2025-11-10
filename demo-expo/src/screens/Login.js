@@ -17,12 +17,12 @@ export default class Login extends Component {
   onSubmit(email, pass) {
 
     if (email === '') {
-      this.setState({ error: 'Ingresá tu email.' });
+      this.setState({ error: 'Ingresa un mail' });
       return;
     }
 
     if (pass === '') {
-      this.setState({ error: 'Ingresá tu contraseña.' });
+      this.setState({ error: 'Ingresa una contraseña' });
       return;
     }
 
@@ -92,10 +92,10 @@ const styles = StyleSheet.create({
   field: {
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    borderColor: '#DCDCDC',
+
     borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
+    padding: 12,
+    marginTop: 8,
     fontSize: 15,
     width: '100%',
   },
