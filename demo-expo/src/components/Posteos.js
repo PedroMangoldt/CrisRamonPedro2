@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
     commentBtn:{
         borderColor: 'black',
         backgroundColor: '#D9D9D9',
+        borderRadius:5,
+        borderWidth:0.5,
         
     },
     fila: {
