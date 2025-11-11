@@ -81,7 +81,7 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#9EC9FF',
     paddingHorizontal: 16,
     paddingTop: 16,
     paddingBottom: 50,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
    paddingTop: 20,
   },
   button: {
-    backgroundColor: '#9EC9FF',
+    backgroundColor: '#D9D9D9',
     paddingVertical: 12,
     alignItems: 'center',
     borderWidth: 1,

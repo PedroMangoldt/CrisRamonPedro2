@@ -102,7 +102,8 @@ class Comments extends Component {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    padding: 12
+    padding: 12,
+    backgroundColor: '#9EC9FF',
   },
   postCard:{
     backgroundColor: '#fff',
@@ -144,10 +145,11 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 6,
     padding: 10,
-    marginTop: 10
+    marginTop: 10,
+    backgroundColor: 'white'
   },
   button:{
-    backgroundColor: '#9EC9FF',
+    backgroundColor: '#D9D9D9',
     paddingVertical: 12,
     alignItems: 'center',
     borderRadius: 6,

@@ -44,6 +44,8 @@ export default class CrearPosteo extends Component {
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 200,
+    backgroundColor: '#9EC9FF',
+    height:'100%'
     },
     title: {
       fontSize: 22,
@@ -61,7 +63,7 @@ export default class CrearPosteo extends Component {
       width: '100%',
     },
     button: {
-      backgroundColor: '#9EC9FF',
+      backgroundColor: '#D9D9D9',
       paddingVertical: 12,
       alignItems: 'center',
       borderWidth: 1,

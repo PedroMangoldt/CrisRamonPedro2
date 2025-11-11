@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 200,
+        backgroundColor: "#9EC9FF",
+        flex: 1
        },
       title: { 
         fontSize: 20,
@@ -67,11 +69,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 12,
         paddingVertical: 12,
+        paddingTop: 12,
         fontSize: 15,
         width: '100%',
+
       },
       button: {
-        backgroundColor: '#9EC9FF',
+        backgroundColor: '#D9D9D9',
         paddingVertical: 12,
         alignItems: 'center',
         borderWidth: 1,
