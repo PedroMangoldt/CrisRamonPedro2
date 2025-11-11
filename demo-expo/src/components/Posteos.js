@@ -54,18 +54,16 @@ class Posteos extends Component {
             <View style={styles.card}>
                 <Text style={styles.owner}>{this.props.posteo.data.owner}</Text>
                 <Text>{this.props.posteo.data.description}</Text>
-                <Text> {this.props.posteo.data.likes.length} Like</Text>
-                <View>
+                <View style={styles.fila}>
                   <Pressable onPress={() => this.likear()}>
                     <Text style={styles.mg}></Text> {this.state.likeado ?
                             <FontAwesome name="heart" size={18} color="black" /> :
-                    <Text style={styles.mg}><Feather name="heart" size={18} color="black" /></Text>}
+                    <Text style={styles.mg}><Feather name="heart" size={18} color="black" /><Text style={styles.textoLike}> {this.props.posteo.data.likes.length} Like</Text></Text>}
                   </Pressable>
-                   <Pressable onPress={() => this.props.navigation.navigate('Comments', { id: this.props.posteo.id })}>
-                    <Text style={styles.commentBtn}>Comentarios</Text>
+                   <Pressable style={styles.commentBtn} onPress={() => this.props.navigation.navigate('HomePage',{screen:'Comments', params:{ id: this.props.posteo.id }})}>
+                    <Text>Comentar</Text>
                   </Pressable>
                 </View>
-
             </View>
         )
     }
@@ -73,7 +71,7 @@ class Posteos extends Component {
 
 const styles = StyleSheet.create({
     card:{
-       backgroundColor:'#fff',
+       backgroundColor:'#FFF8EC',
        padding:15,
        borderRadius:8,
        borderWidth:3,
@@ -89,6 +87,20 @@ const styles = StyleSheet.create({
     mg:{
         marginTop:10,
         color:'blue'
+    },
+    commentBtn:{
+        borderColor: 'black',
+        backgroundColor: '#D9D9D9',
+        
+    },
+    fila: {
+        display: 'flex', 
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 10
+    },
+    textoLike: {
+        color: 'black'
     }
 })
 

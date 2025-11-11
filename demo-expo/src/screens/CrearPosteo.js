@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Pressable, StyleSheet, Image } from 'react-native';
 import { db, auth } from '../firebase/config';
 
 export default class CrearPosteo extends Component {
@@ -27,25 +27,36 @@ export default class CrearPosteo extends Component {
 
     render() {
       return (
+        <View style={styles.vista}>
         <View style={styles.container}>
           <Text style={styles.title}>Crear Nuevo Post</Text>
           <TextInput style={styles.input} keyboardType='default' placeholder='Escribe tu post' onChangeText={text => this.setState({description: text})} value={this.state.description}/>
             <Pressable style={styles.button} onPress={() => this.agregarPost(this.state.description)}>
               <Text>Publicar Post</Text>
             </Pressable>
+          </View>
         </View>
       );
     }
   }
 
   const styles = StyleSheet.create({
+    vista: {
+      backgroundColor: '#9EC9FF',
+      height: '100%',
+      justifyContent: 'center',
+    },
     container: { 
-    padding: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 200,
-    backgroundColor: '#9EC9FF',
-    height:'100%'
+      padding: 16,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor:'#FFF8EC',
+      borderRadius:8,
+      borderWidth:3,
+      borderColor:"black",
+      marginVertical: 7,
+      marginHorizontal: 15,
+ 
     },
     title: {
       fontSize: 22,

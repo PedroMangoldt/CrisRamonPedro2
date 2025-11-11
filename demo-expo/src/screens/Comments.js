@@ -69,11 +69,11 @@ class Comments extends Component {
           <Text style={styles.owner}>{this.state.postOwner}</Text>
           <Text style={styles.post}>{this.state.postDescription}</Text>
           <Text style={styles.likes}>{this.state.postLikes} likes</Text>
-        </View>
+        
 
         <Text style={styles.title}>Comentarios</Text>
-
-        <FlatList
+        <FlatList 
+          style={styles.lista}
           data={this.state.comentarios}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({item}) =>
@@ -94,6 +94,7 @@ class Comments extends Component {
         <Pressable style={styles.button} onPress={() => this.enviarComentario()}>
           <Text>Publicar comentario</Text>
         </Pressable>
+        </View>
       </View>
     );
   }
@@ -106,12 +107,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#9EC9FF',
   },
   postCard:{
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#ddd',
+    backgroundColor: '#FFF8EC',
+    borderWidth: 3,
+    borderColor: 'black',
     borderRadius: 8,
     padding: 12,
-    marginBottom: 12
+    marginBottom: 12,
   },
   owner:{
     fontWeight: 'bold',
@@ -154,6 +155,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 6,
     marginTop: 10
+  },
+  lista:{
+    flex: 1,
+    width: '100%',
   }
 });
 
